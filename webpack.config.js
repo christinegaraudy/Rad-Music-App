@@ -36,6 +36,7 @@ module.exports = {
       },
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
         test: /\.svg$/,
         include: [/react-images-upload/],
         loader: 'file-loader',
@@ -50,6 +51,10 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
         test: /\.css$/
 >>>>>>> 2da8c53... (add) working testMap
+=======
+        use: ['style-loader', 'css-loader'],
+        test: /\.css$/
+>>>>>>> 19d4cae... (add) working testMap
       },
     ],
   },
