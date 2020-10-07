@@ -29,7 +29,7 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({
-      isLoggedIn: true,
+      isLoggedIn: false,
     });
   }
 
@@ -93,11 +93,11 @@ class App extends Component {
                 style={{
                   // border: 'solid blue 2px',
                   height: '90vh',
+                  backgroundColor: '#313840',
                 }}
               >
-                <Navbar bg='dark' variant='dark' >
+                <Navbar variant="dark">
                   <Nav defaultActiveKey="/home" className="flex-column">
-                    <Nav.Item style={{ color: '#d2d2d2' }}>Insert Profile Name</Nav.Item>
                     <Nav.Link onClick={() => { this.changeView('Add'); }}>Add</Nav.Link>
                     <Nav.Link onClick={() => { this.changeView('Search'); }}>Search</Nav.Link>
                     <Nav.Link onClick={() => { this.changeView('Profile'); }}>Profile</Nav.Link>

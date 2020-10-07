@@ -6,7 +6,11 @@ const Splash = ({ userLoggedIn }) => (
     <div className="splash-page-navbar">
       <Navbar bg="dark" variant="dark" className="justify-content-end">
         <Nav className="mr-auto" className="justify-content-end">
+<<<<<<< HEAD
           <Nav.Link onClick={userLoggedIn}>Sign Up</Nav.Link>
+=======
+          <Nav.Link href="">Sign Up</Nav.Link>
+>>>>>>> 8b93c4b... (update) landing.jsx and app.jsx
           <Nav.Link href="">Login</Nav.Link>
           {/* <Nav.Link>Add</Nav.Link> */}
         </Nav>
