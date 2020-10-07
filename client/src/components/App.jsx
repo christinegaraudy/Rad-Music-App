@@ -33,12 +33,6 @@ class App extends Component {
     });
   }
 
-  userLoggedIn() {
-    this.setState({
-      isLoggedIn: true,
-    });
-  }
-
   changeView(option) {
     this.setState({
       view: option,
