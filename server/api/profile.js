@@ -2,7 +2,7 @@ const { Router } = require('express');
 
 const Profile = Router();
 
-const { addBio, addStatus } = require('../db/index.js');
+const { addBio, addStatus, updateBio, updateStatus } = require('../db/index.js');
 
 
 // grab bio and status from database
@@ -21,11 +21,13 @@ const { addBio, addStatus } = require('../db/index.js');
 // });
 
 Profile.post('/bio', (req, res) => {
-  addBio({ bio: req.body.data });
+  // addBio({ bio: req.body.data });
+  updateBio({ bio: req.body.data });
 });
 
 Profile.post('/status', (req, res) => {
-  addStatus({ status: req.body.data });
+  // addStatus({ status: req.body.data });
+  updateStatus({ status: req.body.data });
 });
 
 module.exports = {

@@ -103,6 +103,15 @@ const addBio = (data) => {
   });
 };
 
+const updateBio = (data) => {
+  db.query(`UPDATE user SET bio = '${data.bio}';`), (error, results) => {
+    if (error) {
+      console.error('Could not update bio', error);
+    }
+    return console.log('Bio updated', results.affectedRows);
+  };
+};
+
 const addStatus = (data) => {
   db.query(`INSERT INTO user (status) VALUES ('${data.status}');`, (error, results) => {
     if (error) {
@@ -110,6 +119,15 @@ const addStatus = (data) => {
     }
     return console.log('Status added', results.affectedRows);
   });
+};
+
+const updateStatus = (data) => {
+  db.query(`UPDATE user SET status = '${data.status}';`), (error, results) => {
+    if (error) {
+      console.error('Could not update bio', error);
+    }
+    return console.log('Bio updated', results.affectedRows);
+  };
 };
 
 module.exports = {
@@ -120,7 +138,9 @@ module.exports = {
   ShowsBands,
   authFunc,
   addBio,
+  updateBio,
   addStatus,
+  updateStatus,
 };
 
 // const dbConnection = mysql.createConnection({

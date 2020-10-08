@@ -10,14 +10,23 @@ import PhotoCarousel from './PhotoCarousel';
 
 const Profile = () => {
   const [bio, setBio] = useState('');
-  const [status, setStatus] = useState('test');
+  const [status, setStatus] = useState('');
   const [displayBio, setDisplayBio] = useState('');
   const [displayStatus, setDisplayStatus] = useState('');
 
   // need a function to grab saved bio and status from database when page loads
-  // useEffect(() => {
-  //   axios.get('/api/profile/bio');
-  // }, []);
+  // this doesn't work yet, but on the right track?
+  const getBio = () => {
+    axios.get('/api/profile/bio')
+      .then((response) => {
+        console.log(response.data.bio);
+        setBio(response.data.bio);
+      });
+  };
+
+  useEffect(() => {
+    getBio();
+  }, [bio, getBio]);
 
   const addBio = (data) => {
     axios.post('/api/profile/bio', { data })
@@ -29,6 +38,16 @@ const Profile = () => {
       });
   };
 
+  // const updateBio = (data) => {
+  //   axios.post('/api/profile/bio', { data })
+  //     .then((response) => {
+  //       console.log('addBio client side', response);
+  //     })
+  //     .catch((error) => {
+  //       console.error('addBio client side error', error);
+  //     });
+  // };
+
   const addStatus = (data) => {
     axios.post('/api/profile/status', { data })
       .then((response) => {
@@ -38,6 +57,17 @@ const Profile = () => {
         console.error('addStatus client side error', error);
       });
   };
+
+
+  // const updateStatus = (data) => {
+  //   axios.post('/api/profile/status', { data })
+  //     .then((response) => {
+  //       console.log('addBio client side', response);
+  //     })
+  //     .catch((error) => {
+  //       console.error('addStatus client side error', error);
+  //     });
+  // };
 
 
   const imgStyle = {
@@ -92,6 +122,7 @@ const Profile = () => {
               setDisplayBio(bio);
               setBio('');
               addBio(bio);
+              // updateBio(bio);
             }}
           >
             Update Bio
@@ -127,6 +158,7 @@ const Profile = () => {
               setDisplayStatus(status);
               setStatus('');
               addStatus(status);
+              // updateStatus(status);
             }}
           >
             Update Status
