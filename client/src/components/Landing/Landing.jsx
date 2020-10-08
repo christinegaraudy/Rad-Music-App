@@ -14,20 +14,7 @@ const Landing = () => (
           <div style={{ display: 'block', height: '90vh', width: '50vw' }}>
             <iframe
               style={{ height: '90vh', width: '60vw' }}
-<<<<<<< HEAD
-<<<<<<< HEAD
-              src="https://www.google.com/maps/embed/v1/place?key=
-    &q=NewOrleans+LA"
-=======
               src=""
->>>>>>> 12589c1... (issue) removed info
-=======
-              src=""
-=======
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAs8CFJJP5bgcxYTtXjOer-aCG686_-37U
-    &q=NewOrleans+LA"
->>>>>>> 308fbc8... (update) working on map files
->>>>>>> 2ba1a3b... (update) working on map files
               allowFullScreen
               title="map"
             />
