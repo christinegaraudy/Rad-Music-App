@@ -32,7 +32,7 @@ const Profile = () => {
 
   useEffect(() => {
     getBio();
-  }, [getBio]);
+  }, [bio, getBio]);
 
   const addBio = (data) => {
     axios.post('/api/profile/bio', { data })
