@@ -2,12 +2,30 @@ const { Router } = require('express');
 
 const Profile = Router();
 
-Profile.get('/', (req, res) => {
-  res.send('idk man');
+const { addBio, addStatus } = require('../db/index.js');
+
+
+// grab bio and status from database
+
+// const getBio = () => {
+//   dbConnection.query('SELECT bio FROM user;', (error, results) => {
+//     if (error) {
+//       return console.error('Could not get bio', error);
+//     }
+//     return console.log('Grabbed bio', results.affectedRows);
+//   });
+// };
+
+// Profile.get('/api/bio', (req, res) => {
+//   getBio();
+// });
+
+Profile.post('/bio', (req, res) => {
+  addBio({ bio: req.body.data });
 });
 
-Profile.post('/', (req, res) => {
-
+Profile.post('/status', (req, res) => {
+  addStatus({ status: req.body.data });
 });
 
 module.exports = {

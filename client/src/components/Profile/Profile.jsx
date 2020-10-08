@@ -10,17 +10,34 @@ import PhotoCarousel from './PhotoCarousel';
 
 const Profile = () => {
   const [bio, setBio] = useState('');
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState('test');
   const [displayBio, setDisplayBio] = useState('');
   const [displayStatus, setDisplayStatus] = useState('');
 
   // need a function to grab saved bio and status from database when page loads
-  useEffect(() => {
-    axios.get('/bio')
-  }, []);
+  // useEffect(() => {
+  //   axios.get('/api/profile/bio');
+  // }, []);
 
-  // need a function to save/update bio and status to database
+  const addBio = (data) => {
+    axios.post('/api/profile/bio', { data })
+      .then((response) => {
+        console.log('addBio client side', response);
+      })
+      .catch((error) => {
+        console.error('addBio client side error', error);
+      });
+  };
 
+  const addStatus = (data) => {
+    axios.post('/api/profile/status', { data })
+      .then((response) => {
+        console.log('addBio client side', response);
+      })
+      .catch((error) => {
+        console.error('addStatus client side error', error);
+      });
+  };
 
 
   const imgStyle = {
@@ -74,6 +91,7 @@ const Profile = () => {
               e.preventDefault();
               setDisplayBio(bio);
               setBio('');
+              addBio(bio);
             }}
           >
             Update Bio
@@ -108,6 +126,7 @@ const Profile = () => {
               e.preventDefault();
               setDisplayStatus(status);
               setStatus('');
+              addStatus(status);
             }}
           >
             Update Status

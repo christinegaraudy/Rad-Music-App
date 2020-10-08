@@ -47,6 +47,8 @@ const User = db.define('user', {
   profilePic: Sequelize.STRING,
   googleId: Sequelize.STRING,
   genreId: Sequelize.INTEGER,
+  status: Sequelize.STRING,
+  bio: Sequelize.STRING,
 });
 
 const ShowsBands = db.define('shows_bands', {
@@ -92,6 +94,24 @@ const authFunc = (profile) => {
   });
 };
 
+const addBio = (data) => {
+  db.query(`INSERT INTO user (bio) VALUES ('${data.bio}');`, (error, results) => {
+    if (error) {
+      console.error('Could not add bio', error);
+    }
+    return console.log('Bio added', results.affectedRows);
+  });
+};
+
+const addStatus = (data) => {
+  db.query(`INSERT INTO user (status) VALUES ('${data.status}');`, (error, results) => {
+    if (error) {
+      console.error('Could not add status', error);
+    }
+    return console.log('Status added', results.affectedRows);
+  });
+};
+
 module.exports = {
   db,
   Show,
@@ -99,6 +119,8 @@ module.exports = {
   User,
   ShowsBands,
   authFunc,
+  addBio,
+  addStatus,
 };
 
 // const dbConnection = mysql.createConnection({
