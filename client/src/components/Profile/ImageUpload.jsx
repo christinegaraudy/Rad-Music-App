@@ -1,16 +1,14 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
+import ImageUploader from 'react-images-upload';
+// import Button from 'react-bootstrap/Button';
 
 const ImageUpload = () => (
-  <div className="upload-button">
-    <Button 
-      type="submit"
-      variant="outline-primary"
-      size="sm"
-    >
-      Upload New Photo
-    </Button>
-  </div>
+  <ImageUploader
+    withIcon
+    buttonText="Choose images"
+    imgExtension={['.jpg', '.gif', '.png', '.gif']}
+    maxFileSize={5242880}
+  />
 );
 
 export default ImageUpload;

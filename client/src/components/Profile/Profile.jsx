@@ -14,6 +14,11 @@ const Profile = () => {
   const [status, setStatus] = useState('');
   const [displayBio, setDisplayBio] = useState('');
   const [displayStatus, setDisplayStatus] = useState('');
+  const [pictures, setPictures] = useState([]);
+
+  const onDrop = picture => {
+    setPictures([...pictures, picture]);
+  };
 
   // need a function to grab saved bio and status from database when page loads
   // this doesn't work yet, but on the right track?
@@ -97,7 +102,7 @@ const Profile = () => {
       <Row>
         <Col sm={4}>
           <img src={profilepic} alt="cat in vest" style={imgStyle} />
-          <ImageUpload />
+          <ImageUpload onChange={onDrop} />
           <div
             className="bio"
             style={{
@@ -166,7 +171,7 @@ const Profile = () => {
             Update Status
           </Button>
           <PhotoCarousel />
-          <ImageUpload />
+          <ImageUpload onChange={onDrop} />
         </Col>
       </Row>
     </div>
