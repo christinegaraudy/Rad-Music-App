@@ -30,6 +30,10 @@ const Profile = () => {
     setLoading(false);
   };
 
+  const getImage = () => {
+
+  };
+
   const saveImage = () => {
 
   };
