@@ -77,7 +77,7 @@
     "react-dom": "^16.13.1",
     "react-images-upload": "^1.2.8",
     "sequelize": "^6.3.5",
-    "style-loader": "^2.0.0"
+    "style-loader": "^2.0.0",
     "react-geocode": "^0.2.2",
     "react-geocode": "^0.2.2",
     "react-google-maps": "^9.4.5",
