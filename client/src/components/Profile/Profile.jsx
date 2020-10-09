@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import profilepic from './sample_data/profilepic.jpg';
 import PhotoCarousel from './PhotoCarousel';
+import ImageUpload from './ImageUpload';
 
 const Profile = () => {
   const [bio, setBio] = useState('');
@@ -26,7 +27,7 @@ const Profile = () => {
 
   useEffect(() => {
     getBio();
-  }, [bio, getBio]);
+  }, [getBio]);
 
   const addBio = (data) => {
     axios.post('/api/profile/bio', { data })
@@ -96,6 +97,7 @@ const Profile = () => {
       <Row>
         <Col sm={4}>
           <img src={profilepic} alt="cat in vest" style={imgStyle} />
+          <ImageUpload />
           <div
             className="bio"
             style={{
@@ -164,6 +166,7 @@ const Profile = () => {
             Update Status
           </Button>
           <PhotoCarousel />
+          <ImageUpload />
         </Col>
       </Row>
     </div>
