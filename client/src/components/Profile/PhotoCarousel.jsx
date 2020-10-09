@@ -19,7 +19,7 @@ const PhotoCarousel = () => (
   <Carousel
     className="photo-carousel"
     style={{
-      marginTop: 10,
+      marginTop: 50,
       marginLeft: 'auto',
       marginRight: 'auto',
     }}

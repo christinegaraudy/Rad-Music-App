@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const { SEQUEL_PASS } = require('../config')
+const { SEQUEL_PASS } = require('../config');
 
 const db = new Sequelize('radma', 'root', '', {
   host: 'localhost',
@@ -49,7 +49,7 @@ const User = db.define('user', {
   profilePic: Sequelize.STRING,
   googleId: Sequelize.STRING,
   genreId: Sequelize.INTEGER,
-  status: Sequelize.STRING,
+  // status: Sequelize.STRING,
   bio: Sequelize.STRING,
 });
 
@@ -96,41 +96,43 @@ const authFunc = (profile) => {
   });
 };
 
-const addBio = (data) => {
-  db.query(`INSERT INTO user (bio) VALUES ('${data.bio}');`, (error, results) => {
-    if (error) {
-      console.error('Could not add bio', error);
-    }
-    return console.log('Bio added', results.affectedRows);
-  });
-};
+// const addBio = async (data) => {
+//   const bio = User.build({ bio: data.bio });
+//   await bio.save().then((user) => console.log(user));
+// db.query(`INSERT INTO user (bio) VALUES ('${data.bio}');`, (error, results) => {
+//   if (error) {
+//     console.error('Could not add bio', error);
+//   }
+//   return console.log('Bio added', results.affectedRows);
+// });
+// };
 
-const updateBio = (data) => {
-  db.query(`UPDATE user SET bio = '${data.bio}';`), (error, results) => {
-    if (error) {
-      console.error('Could not update bio', error);
-    }
-    return console.log('Bio updated', results.affectedRows);
-  };
-};
+// const updateBio = (data) => {
+//   db.query(`UPDATE user SET bio = '${data.bio}';`), (error, results) => {
+//     if (error) {
+//       console.error('Could not update bio', error);
+//     }
+//     return console.log('Bio updated', results.affectedRows);
+//   };
+// };
 
-const addStatus = (data) => {
-  db.query(`INSERT INTO user (status) VALUES ('${data.status}');`, (error, results) => {
-    if (error) {
-      console.error('Could not add status', error);
-    }
-    return console.log('Status added', results.affectedRows);
-  });
-};
+// const addStatus = (data) => {
+//   db.query(`INSERT INTO user (status) VALUES ('${data.status}');`, (error, results) => {
+//     if (error) {
+//       console.error('Could not add status', error);
+//     }
+//     return console.log('Status added', results.affectedRows);
+//   });
+// };
 
-const updateStatus = (data) => {
-  db.query(`UPDATE user SET status = '${data.status}';`), (error, results) => {
-    if (error) {
-      console.error('Could not update bio', error);
-    }
-    return console.log('Bio updated', results.affectedRows);
-  };
-};
+// const updateStatus = (data) => {
+//   db.query(`UPDATE user SET status = '${data.status}';`), (error, results) => {
+//     if (error) {
+//       console.error('Could not update bio', error);
+//     }
+//     return console.log('Bio updated', results.affectedRows);
+//   };
+// };
 
 module.exports = {
   db,
@@ -139,10 +141,10 @@ module.exports = {
   User,
   ShowsBands,
   authFunc,
-  addBio,
-  updateBio,
-  addStatus,
-  updateStatus,
+  // addBio,
+  // updateBio,
+  // addStatus,
+  // updateStatus,
 };
 
 // const dbConnection = mysql.createConnection({
