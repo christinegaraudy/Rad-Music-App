@@ -4,7 +4,7 @@ import ImageUploader from 'react-images-upload';
 
 const ImageUpload = () => (
   <ImageUploader
-    withIcon
+    withIcon={false}
     buttonText="Choose images"
     imgExtension={['.jpg', '.gif', '.png', '.gif']}
     maxFileSize={5242880}
