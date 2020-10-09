@@ -96,44 +96,6 @@ const authFunc = (profile) => {
   });
 };
 
-// const addBio = async (data) => {
-//   const bio = User.build({ bio: data.bio });
-//   await bio.save().then((user) => console.log(user));
-// db.query(`INSERT INTO user (bio) VALUES ('${data.bio}');`, (error, results) => {
-//   if (error) {
-//     console.error('Could not add bio', error);
-//   }
-//   return console.log('Bio added', results.affectedRows);
-// });
-// };
-
-// const updateBio = (data) => {
-//   db.query(`UPDATE user SET bio = '${data.bio}';`), (error, results) => {
-//     if (error) {
-//       console.error('Could not update bio', error);
-//     }
-//     return console.log('Bio updated', results.affectedRows);
-//   };
-// };
-
-// const addStatus = (data) => {
-//   db.query(`INSERT INTO user (status) VALUES ('${data.status}');`, (error, results) => {
-//     if (error) {
-//       console.error('Could not add status', error);
-//     }
-//     return console.log('Status added', results.affectedRows);
-//   });
-// };
-
-// const updateStatus = (data) => {
-//   db.query(`UPDATE user SET status = '${data.status}';`), (error, results) => {
-//     if (error) {
-//       console.error('Could not update bio', error);
-//     }
-//     return console.log('Bio updated', results.affectedRows);
-//   };
-// };
-
 module.exports = {
   db,
   Show,
@@ -141,10 +103,6 @@ module.exports = {
   User,
   ShowsBands,
   authFunc,
-  // addBio,
-  // updateBio,
-  // addStatus,
-  // updateStatus,
 };
 
 // const dbConnection = mysql.createConnection({

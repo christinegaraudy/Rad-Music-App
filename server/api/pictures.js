@@ -6,7 +6,7 @@ Pictures.get('/', (req, res) => {
   res.send('test');
 });
 
-Pictures.post('/', (req, res) => {
+Pictures.post('/save', (req, res) => {
 
 });
 

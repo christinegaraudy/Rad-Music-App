@@ -9,6 +9,7 @@ require('./passport-setup');
 
 const app = express();
 app.use(cors());
+const cloudinary = require('cloudinary').v2;
 const { Shows } = require('./api/shows');
 const { Pictures } = require('./api/pictures');
 const { Oauth } = require('./api/oauth');
